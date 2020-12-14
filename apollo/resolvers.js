@@ -1,7 +1,8 @@
-export const resolvers = {
-  Query: {
-    viewer(_parent, _args, _context, _info) {
-      return { id: 1, name: 'John Smith', status: 'cached' }
-    },
-  },
-}
+const viewer = require('./queries/viewer')
+const user = require('./queries/user')
+const _ = require('lodash')
+export const resolvers = _.merge(
+  {},
+  viewer,
+  user
+)

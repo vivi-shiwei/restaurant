@@ -1,13 +1,11 @@
-import { gql } from '@apollo/client'
+const root = require('./types/root')
+const scalars = require('./types/scalar')
+const user = require('./types/user')
+const viewer = require('./types/viewer')
 
-export const typeDefs = gql`
-  type User {
-    id: ID!
-    name: String!
-    status: String!
-  }
-
-  type Query {
-    viewer: User
-  }
-`
+export const typeDefs = [
+  root,
+  scalars,
+  user,
+  viewer
+]
