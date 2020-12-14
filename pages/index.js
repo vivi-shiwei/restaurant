@@ -2,6 +2,7 @@ import gql from 'graphql-tag'
 import Link from 'next/link'
 import { useQuery } from '@apollo/client'
 import { initializeApollo } from '../apollo/client'
+import { Button } from 'antd'
 
 const ViewerQuery = gql`
   query ViewerQuery {
@@ -15,31 +16,35 @@ const ViewerQuery = gql`
 
 const Index = () => {
   const {
-    data: { viewer },
+    data: { viewer }
   } = useQuery(ViewerQuery)
 
   return (
     <div>
       You're signed in as {viewer.name} and you're {viewer.status} goto{' '}
-      <Link href="/about">
+      <Link href='/about'>
         <a>static</a>
       </Link>{' '}
       page.
+
+      <Button type='primary' loading>
+        Loading
+      </Button>
     </div>
   )
 }
 
-export async function getStaticProps() {
+export async function getStaticProps () {
   const apolloClient = initializeApollo()
 
   await apolloClient.query({
-    query: ViewerQuery,
+    query: ViewerQuery
   })
 
   return {
     props: {
-      initialApolloState: apolloClient.cache.extract(),
-    },
+      initialApolloState: apolloClient.cache.extract()
+    }
   }
 }
 
