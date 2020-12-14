@@ -4,16 +4,27 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "db:dev:migrate": "cross-env NODE_ENV=development KNEX_ENV=migrate knex migrate:latest",
+    "db:dev:migrate:create": "cross-env NODE_ENV=development knex migrate:make",
+    "db:dev:seed:create": "cross-env NODE_ENV=development knex seed:make",
+    "db:dev:seed": "cross-env NODE_ENV=development KNEX_ENV=seed knex seed:run"
   },
   "dependencies": {
-    "@apollo/client": "^3.0.2",
-    "apollo-server-micro": "^2.14.2",
-    "graphql": "^14.0.2",
+    "@apollo/client": "^3.3.6",
+    "apollo-server-micro": "^2.19.0",
+    "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.3",
+    "custom-env": "^2.0.1",
+    "graphql": "^15.4.0",
+    "knex": "^0.21.13",
+    "lodash": "^4.17.20",
     "next": "latest",
-    "prop-types": "^15.6.2",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "sqlite3": "^5.0.0",
+    "standard": "^16.0.3"
   },
   "license": "MIT"
 }
