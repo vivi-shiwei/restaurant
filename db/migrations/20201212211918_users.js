@@ -8,6 +8,7 @@ exports.up = async (knex) => {
     table.string('gender')
     table.string('email')
     table.string('phone_number', 30)
+    table.string('password')
     table.string('profile_photo')
     table.string('is_staff').defaultTo(false)
     table.boolean('is_admin').defaultTo(false)
