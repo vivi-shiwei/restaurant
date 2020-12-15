@@ -20,13 +20,19 @@
     "graphql": "^15.4.0",
     "knex": "^0.21.13",
     "lodash": "^4.17.20",
+    "md5": "^2.3.0",
     "next": "latest",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "sass": "^1.30.0",
     "sqlite3": "^5.0.0",
     "standard": "^16.0.3"
+  },
+  "standard": {
+    "parser": "babel-eslint"
   },
   "license": "MIT"
 }
