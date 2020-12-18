@@ -30,7 +30,7 @@ module.exports = {
   development: {
     client: 'sqlite3',
     connection: {
-      filename: process.env.sqlite3_db_file
+      filename: process.env.SQLITE3_DB_FILEPATH
     },
     migrations: {
       directory: './db/migrations'
@@ -43,7 +43,7 @@ module.exports = {
   production: {
     client: 'sqlite3',
     connection: {
-      filename: process.env.sqlite3_db_file
+      filename: process.env.SQLITE3_DB_FILEPATH
     },
     pool: {
       min: 2,
