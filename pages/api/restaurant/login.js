@@ -1,1 +1,1 @@
-export { default } from '../../../api/routes/login'
+export { default } from '../../../api/routes/auth/login'
