@@ -1,3 +1,4 @@
+const md5 = require('md5')
 const adminUsers = [
   { name: 'rainwildest', email: 'rainwildest@163.com', gender: 1, profile_photo: '' },
   { name: 'vivi', email: 'shiwei254@gmail.com', gender: 0, profile_photo: '' }
@@ -11,6 +12,7 @@ const generateAdminUsers = (uuid) => {
       id: uuid(),
       is_admin: true,
       is_staff: false,
+      password: md5('123456'),
       ...adminUsers[i]
     })
   }
