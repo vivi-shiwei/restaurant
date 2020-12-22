@@ -1,7 +1,7 @@
-const user = require('./user')
+const currentUser = require('./user')
 
 module.exports = {
   Query: {
-    user
+    currentUser
   }
 }

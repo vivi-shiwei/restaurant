@@ -19,6 +19,7 @@ if (!IS_PROD) {
 
 const apolloServer = new ApolloServer({
   schema,
+  introspection: !IS_PROD,
   playground,
   context: ({ req }) => {
     return {
