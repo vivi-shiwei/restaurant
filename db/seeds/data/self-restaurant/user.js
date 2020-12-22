@@ -1,3 +1,4 @@
+const md5 = require('md5')
 /* 虚拟用户 */
 const users = []
 for (let i = 0; i < 10; ++i) {
@@ -17,6 +18,7 @@ const generatePersonnelUsers = (uuid) => {
       id: uuid(),
       is_admin: false,
       is_staff: true,
+      password: md5('123456'),
       ...users[i]
     })
   }
