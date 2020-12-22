@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import md5 from 'md5'
+import fetch from 'node-fetch'
+
 import { Layout, Form, Input, Button, Checkbox, Image } from 'antd'
 import { UserOutlined, LockOutlined } from '@ant-design/icons'
-import fetch from 'node-fetch'
 const { Content } = Layout
 
 const Login = () => {
@@ -16,7 +18,7 @@ const Login = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           username: values.username,
-          password: values.password
+          password: md5(values.password)
         })
       }).then(states => states.json())
       if (test.state) {
