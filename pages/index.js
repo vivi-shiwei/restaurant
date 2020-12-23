@@ -22,25 +22,23 @@ const Index = () => {
   const currentUser = data?.currentUser
   const shouldRedirect = !(loading || error || currentUser)
 
-  console.log(currentUser)
   useEffect(() => {
     if (shouldRedirect) {
       router.push('/login')
     }
   }, [shouldRedirect])
 
-  // if (error) {
-  //   router.push('/login')
-  //   return <p>{error.message}</p>
-  // }
+  if (error) {
+    router.push('/login')
+    return <p>{error.message}</p>
+  }
 
   if (loading) return 'loading...'
 
   return (
-    (
+    !!currentUser && (
       <div>
-        {/* You're signed in as {currentUser.name} and you're  goto{' '} */}
-        You're signed in as and you're  goto{' '}
+        You're signed in as {currentUser.name} and you're  goto{' '}
         <Link href='/about'>
           <a>static</a>
         </Link>{' '}

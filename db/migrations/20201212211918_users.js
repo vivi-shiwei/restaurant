@@ -10,7 +10,7 @@ exports.up = async (knex) => {
     table.string('phone_number', 30)
     table.string('password')
     table.string('profile_photo')
-    table.string('is_staff').defaultTo(false)
+    table.boolean('is_staff').defaultTo(false)
     table.boolean('is_admin').defaultTo(false)
     table.timestamp('created_at').defaultTo(knex.raw('current_timestamp')).notNullable()
     table.timestamp('modified_at')

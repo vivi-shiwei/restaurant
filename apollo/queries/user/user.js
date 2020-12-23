@@ -1,9 +1,10 @@
 import { AuthenticationError, UserInputError } from 'apollo-server-micro'
 
 module.exports = (_, _args, _context = {}, _info) => {
-  const { user } = _context
+  const { currentUser } = _context
+
   try {
-    if (!user) {
+    if (!currentUser) {
       throw new AuthenticationError(
         'Authentication token is invalid, please log in'
       )
@@ -14,5 +15,5 @@ module.exports = (_, _args, _context = {}, _info) => {
     )
   }
 
-  return user
+  return currentUser
 }
