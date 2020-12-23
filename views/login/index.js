@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import md5 from 'md5'
 import fetch from 'node-fetch'
 
-import { Layout, Form, Input, Button, Checkbox, Image } from 'antd'
+import { Layout, Form, Input, Button, Checkbox, Image, Avatar } from 'antd'
 import { UserOutlined, LockOutlined } from '@ant-design/icons'
 const { Content } = Layout
 
@@ -13,7 +13,7 @@ const Login = () => {
 
   const onFinish = async (values) => {
     try {
-      const test = await fetch('../../api/restaurant/login', {
+      const test = await fetch('/api/restaurant/login', {
         method: 'post',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -38,7 +38,7 @@ const Login = () => {
         <div id='login-img' />
         <div className='login-main'>
           <div className='login-avatar'>
-            <Image src='/jllogo.jpg' width='100px' height='100px' />
+            <Avatar size={64} icon={<UserOutlined />} />
           </div>
           <Form
             className='login-form'
