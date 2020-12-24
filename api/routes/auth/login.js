@@ -12,15 +12,14 @@ const main = (req, res, next) => {
 
     if (!user) return res.end(JSON.stringify({ state: false }))
 
-    req.logIn(user, function (err) {
-      if (err) res.end(JSON.stringify({ state: false, error: err.message }))
+    if (!!user && !user.id && !user.created_at) {
+      return res.end(JSON.stringify({ state: false, error: err.message }))
+    }
 
-      return res.end(JSON.stringify({
-        state: true,
-        user: user,
-        env: process.env.SESSION_COOKIE_SECRET,
-        prod: process.env.NODE_ENV
-      }))
+    req.logIn(user, function (err) {
+      if (err) return res.end(JSON.stringify({ state: false, error: err.message }))
+
+      return res.end(JSON.stringify({ state: true }))
     })
   })(req, res, next)
 }

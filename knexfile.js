@@ -8,7 +8,7 @@ const path = require('path')
 if (process.env.KNEX_ENV) {
   /* 检测db数据库是否存在 */
   let isExist = false
-  const filepath = path.join(__dirname, './db/sql/restaurant.db')
+  const filepath = path.resolve(process.env.SQLITE3_DB_FILEPATH)
   try {
     isExist = !(fs.accessSync(filepath))
   } catch (err) {
