@@ -15,7 +15,7 @@ const main = (req, res, next) => {
     req.logIn(user, function (err) {
       if (err) res.end(JSON.stringify({ state: false, error: err.message }))
 
-      return res.end(JSON.stringify({ state: true }))
+      return res.end(JSON.stringify({ state: true, user: user }))
     })
   })(req, res, next)
 }
