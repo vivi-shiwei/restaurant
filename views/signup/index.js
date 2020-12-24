@@ -8,28 +8,11 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons'
 const { Content } = Layout
 
 const Login = () => {
-  const [state, setState] = useState(true)
-  const router = useRouter()
+  // const router = useRouter()
 
   const onFinish = async (values) => {
-    try {
-      const test = await fetch('/api/restaurant/login', {
-        method: 'post',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          username: values.username,
-          password: md5(values.password)
-        })
-      }).then(states => states.json())
-      if (test.state) {
-        setState(true)
-        router.push('/home')
-      } else {
-        setState(false)
-      }
-    } catch (err) {
-      console.log('error', err)
-    }
+    console.log(values.username)
+    console.log(values.password)
   }
 
   return (
@@ -81,18 +64,11 @@ const Login = () => {
                   <Checkbox>记住密码</Checkbox>
                 </Form.Item>
 
-                <a className='login-form-forgot' href='/signup'>
-                  注册
-                </a>
-
               </Form.Item>
-              <div style={{ height: '30px', width: '100%' }}>
-                {!state && (<p className='login-form-erro'>用户名或者密码错误</p>)}
-              </div>
 
               <Form.Item>
                 <Button type='primary' htmlType='submit' className='login-form-button'>
-                  登录
+                  注册
                 </Button>
               </Form.Item>
             </Form>

@@ -37,11 +37,18 @@
 }
 .login-form-forgot {
   float: right;
-  color: red;
-  font-size: 12px;
+  // margin: 0;
+  // padding: 0 !important;
+  // height: auto !important;
+  // color: red;
+  // font-size: 12px;
 }
 .ant-col-rtl .login-form-forgot {
   float: left;
+}
+.login-form-erro{
+  color: red;
+  font-size: 12px;
 }
 .login-form-button {
   width: 100%;
