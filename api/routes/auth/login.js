@@ -19,7 +19,7 @@ const main = (req, res, next) => {
     req.logIn(user, function (err) {
       if (err) return res.end(JSON.stringify({ state: false, error: err.message }))
 
-      return res.end(JSON.stringify({ state: true }))
+      return res.end(JSON.stringify({ state: true, env: process.env.SESSION_COOKIE_SECRET }))
     })
   })(req, res, next)
 }
