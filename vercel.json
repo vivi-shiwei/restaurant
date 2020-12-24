@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "env": {
+    "SQLITE3_DB_FILEPATH": "db/sql/restaurant.db",
+    "SESSION_COOKIE_SECRET": "restaurant-author-vivi-rainwildest"
+  }
+}
