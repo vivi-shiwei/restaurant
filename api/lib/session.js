@@ -11,7 +11,7 @@ if (!process.env.SESSION_COOKIE_SECRET) {
 module.exports = session({
   keys: cookieKeygrip,
   name: 'session',
-  secure: process.env.NODE_ENV === 'production',
+  secure: true,
   maxAge: ONE_WEEK,
   signed: true,
   sameSite: 'lax'
