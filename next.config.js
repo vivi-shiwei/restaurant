@@ -6,8 +6,6 @@ module.exports = {
   },
   env: {
     SQLITE3_DB_FILEPATH: process.env.SQLITE3_DB_FILEPATH
-    // SESSION_COOKIE_SECRET: process.env.SESSION_COOKIE_SECRET
-    // NODE_ENV: process.env.NODE_ENV
   },
   reactStrictMode: true
 }
