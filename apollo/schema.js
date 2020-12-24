@@ -8,6 +8,7 @@ export const schema = makeExecutableSchema({
   resolvers
 })
 
+/* 每次执行graphql之前都去查询一下 currentUser */
 const rootResolveFunction = async (parent, args, _context, info) => {
   if (!!info && !!info.operation && !!info.operation.__runAtMostOnce) {
     delete info.operation.__runAtMostOnce
@@ -18,7 +19,6 @@ const rootResolveFunction = async (parent, args, _context, info) => {
   _context.currentUser = null
   if (!!user && !!user.id) {
     _context.currentUser = await loaders.user.load(user.id)
-    console.log(_context.currentUser)
     if (!_context.currentUser) {
       throw new AuthenticationError('This account has been deleted or deactivated')
     }

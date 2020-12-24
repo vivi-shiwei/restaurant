@@ -8,7 +8,7 @@ authentication()
 
 const main = (req, res, next) => {
   passport.authenticate('local', (err, user, info) => {
-    if (err) return res.json({ state: false, error: err.message })
+    if (err) return res.end(JSON.stringify({ state: false, error: err.message }))
 
     if (!user) return res.end(JSON.stringify({ state: false }))
 
