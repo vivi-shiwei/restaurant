@@ -30,7 +30,7 @@ module.exports = {
   development: {
     client: 'sqlite3',
     connection: {
-      filename: './db/sql/restaurant.db'
+      filename: path.join(__dirname, './db/sql/restaurant.db')
     },
     migrations: {
       directory: './db/migrations'
@@ -43,7 +43,7 @@ module.exports = {
   production: {
     client: 'sqlite3',
     connection: {
-      filename: './db/sql/restaurant.db'
+      filename: path.join(__dirname, './db/sql/restaurant.db')
     },
     pool: {
       min: 2,
