@@ -15,7 +15,7 @@ const main = (req, res, next) => {
     req.logIn(user, function (err) {
       if (err) res.end(JSON.stringify({ state: false, error: err.message }))
 
-      return res.end(JSON.stringify({ state: true, user: user }))
+      return res.end(JSON.stringify({ state: true, user: user, env: process.env.SQLITE3_DB_FILEPATH }))
     })
   })(req, res, next)
 }
