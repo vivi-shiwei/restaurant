@@ -18,7 +18,7 @@ const main = (req, res, next) => {
       return res.end(JSON.stringify({
         state: true,
         user: user,
-        env: process.env.SQLITE3_DB_FILEPATH,
+        env: process.env.SESSION_COOKIE_SECRET,
         prod: process.env.NODE_ENV
       }))
     })
