@@ -1,6 +1,6 @@
 
 const { db: knex } = require('../knex')
-const distinguish = require('../../lib/distinguish')
+const distinguish = require('../../lib/api/distinguish')
 const getUserByEmailOrPhoneNum = async (args = {}) => {
   const {
     account,

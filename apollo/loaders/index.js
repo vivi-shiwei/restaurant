@@ -1,5 +1,5 @@
 const DataLoader = require('dataloader')
-const unique = require('../../lib/unique')
+const unique = require('../../lib/api/unique')
 const { getUsersByIds } = require('../../db/model/user')
 
 const createLoaders = {

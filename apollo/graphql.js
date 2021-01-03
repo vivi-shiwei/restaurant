@@ -1,9 +1,9 @@
 import passport from 'passport'
 import { ApolloServer } from 'apollo-server-micro'
 import { schema } from './schema'
-import runMiddleware from '../api/lib/runMiddleware'
-import session from '../api/lib/session'
-import { init as initPassport } from '../api/lib/initPassport'
+import runMiddleware from '../lib/api/runMiddleware'
+import session from '../lib/api/session'
+import { init as initPassport } from '../lib/api/initPassport'
 import createLoaders from './loaders'
 
 initPassport()
